@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>查询成绩</title>
+</head>
+<body>
+    <h1>查询成绩</h1>
+    <form id="grade-form">
+       <label for="name">姓名:</label>
+       <input type="text" id="name" name="name" required>
+       <button type="submit">查询成绩</button>
+    </form>
+    <p id="result"></p>
+
+   <script>
+        const grades = {
+            "徐濛濛": 85,
+            "敖羽晗": 84,
+            "罗雨柔": 84,
+            "杨慧": 90,
+            "郑钧翔": 85,
+            "胡剑兰": 84,
+            "陈文悦": 83,
+            "陈紫琴": 82,
+            "吴恬恬": 85,
+            "陈真": 85,
+            "周可馨": 88,
+            "张琴": 84,
+            "胡星仪": 85,
+            "陶绍英": 84,
+            "翟冰璇": 83,
+            "孙艺萌": 88,
+            "朱胜娅": 85,
+            "罗宇凡": 86,
+            "邓翔": 82,
+            "李佳丽": 82,
+            "谌书芹": 86,
+            "鄢语星": 83,
+            "万义娜": 80,
+            "善文瑞": 82,
+            "张一平": 81,
+            "再努热木·艾克白尔": "缓考",
+            "周炜峰": "权限不足",
+            "谢佳惠": 82,
+            "徐逸": 82,
+            "时上雯": 81,
+            "刘岩": 83,
+            "俞雯": 83,
+            "张琪": 83,
+            "曾璐": 84,
+            "熊欣月": 81,
+            "徐粲翎": 85,
+            "朱文慧": 84,
+            "陈厚谕": 84,
+            "高静怡": 84,
+            "符冰洁": 85,
+            "杜薇": 84
+        };
+
+        document.getElementById("grade-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const name = document.getElementById("name").value;
+            const result = document.getElementById("result");
+
+            if (grades.hasOwnProperty(name)) {
+                result.textContent = `成绩：${grades[name]}`;
+            } else {
+                result.textContent = "未找到该生成绩，请检查输入的姓名是否正确。";
+            }
+        });
+    </script>
+</body>
+</html>
