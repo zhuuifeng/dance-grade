@@ -3,18 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>查询成绩</title>
+    <title>查询成绩</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-image: linear-gradient(45deg, #1e3c72 25%, transparent 25%),
+                            linear-gradient(135deg, #1e3c72 25%, transparent 25%),
+                            linear-gradient(225deg, #1e3c72 25%, transparent 25%),
+                            linear-gradient(315deg, #1e3c72 25%, transparent 25%);
+            background-size: 100px 100px;
+            background-position: 0 0, 50px 0, 50px -50px, 0px 50px;
+        }
+        main {
+            flex-grow: 1;
+            padding: 2rem;
+        }
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #f1f1f1;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-    <h1>查询成绩</h1>
-    <form id="grade-form">
-       <label for="name">姓名:</label>
-       <input type="text" id="name" name="name" required>
-       <button type="submit">查询成绩</button>
-    </form>
-    <p id="result"></p>
+    <main>
+        <h1>查询成绩</h1>
+        <form id="grade-form">
+            <label for="name">姓名:</label>
+            <input type="text" id="name" name="name" required>
+            <button type="submit">查询成绩</button>
+        </form>
+        <p id="result"></p>
+    </main>
 
-   <script>
+    <script>
         const grades = {
             "徐濛濛": 85,
             "敖羽晗": 84,
@@ -65,9 +92,7 @@
             const result = document.getElementById("result");
 
             if (grades.hasOwnProperty(name)) {
-                result.textContent = `考核成绩：${grades[name]}`;
-                result.textContent = `不包含平时成绩，请以最终成绩为准`;
-                result.textContent = ` Copyright（C）2023 Zhuifeng TECH Inc. All Rights Reserved`;
+                result.textContent = "成绩：" + grades[name];
             } else {
                 result.textContent = "未找到该生成绩，请检查输入的姓名是否正确。";
             }
