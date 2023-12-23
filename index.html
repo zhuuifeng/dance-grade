@@ -3,19 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>查询成绩</title>
-    <style>
+  <title>查询成绩</title>
+  <style>
         body {
             display: flex;
             flex-direction: column;
             min-height: 100vh;
-            background-image: linear-gradient(45deg, #1e3c72 25%, transparent 25%),
-                            linear-gradient(135deg, #1e3c72 25%, transparent 25%),
-                            linear-gradient(225deg, #1e3c72 25%, transparent 25%),
-                            linear-gradient(315deg, #1e3c72 25%, transparent 25%);
+            background-image: linear-gradient(45deg, #b3d4fc 25%, transparent 25%),
+                            linear-gradient(135deg, #b3d4fc 25%, transparent 25%),
+                            linear-gradient(225deg, #b3d4fc 25%, transparent 25%),
+                            linear-gradient(315deg, #b3d4fc 25%, transparent 25%);
             background-size: 100px 100px;
             background-position: 0 0, 50px 0, 50px -50px, 0px 50px;
+            animation: flowing-background 5s infinite linear;
         }
+
+        @keyframes flowing-background {
+            0% {
+                background-position: 0 0, 50px 0, 50px -50px, 0px 50px;
+            }
+            50% {
+                background-position: 100px 0, 150px 0, 150px -50px, 100px 50px;
+            }
+            100% {
+                background-position: 0 0, 50px 0, 50px -50px, 0px 50px;
+            }
+        }
+
         main {
             flex-grow: 1;
             padding: 2rem;
@@ -34,14 +48,14 @@
     <main>
         <h1>查询成绩</h1>
         <form id="grade-form">
-            <label for="name">姓名:</label>
-            <input type="text" id="name" name="name" required>
-            <button type="submit">查询成绩</button>
+          <label for="name">姓名:</label>
+          <input type="text" id="name" name="name" required>
+          <button type="submit">查询成绩</button>
         </form>
         <p id="result"></p>
     </main>
 
-    <script>
+  <script>
         const grades = {
             "徐濛濛": 85,
             "敖羽晗": 84,
