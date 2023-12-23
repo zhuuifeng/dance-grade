@@ -65,11 +65,16 @@
             const result = document.getElementById("result");
 
             if (grades.hasOwnProperty(name)) {
-                result.textContent = `成绩：${grades[name]}`;
+                result.textContent = `考核成绩：${grades[name]}`;
+                result.textContent = `不包含平时成绩，请以最终成绩为准`;
+                result.textContent = ` Copyright（C）2023 Zhuifeng TECH Inc. All Rights Reserved`;
             } else {
                 result.textContent = "未找到该生成绩，请检查输入的姓名是否正确。";
             }
         });
     </script>
+   <footer>
+        <p>Copyright（C）2023 追风科学研究院 All Rights Reserved</p>
+    </footer>
 </body>
 </html>
